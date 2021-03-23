@@ -24,7 +24,8 @@ class Stream(Model):
     class Meta:
         database = db
 
-# db.create_tables([Streamer, Stream])
+if __name__ == "__main__":
+    db.create_tables([Streamer, Stream])
 
 # Usage
 # test = Streamer(platform='Twitch', username='Saby',
