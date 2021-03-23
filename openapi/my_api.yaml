@@ -1,0 +1,85 @@
+---
+swagger: '2.0'
+info:
+  title: Test API
+  description: API test for job
+  version: 1.0.0
+
+host: api.example.com
+basePath: /v1
+schemes:
+  - https
+
+paths:
+  /users:
+    get:
+      operationId: api.get_users
+      summary: Returns a list of users.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+
+  /users/{username}:
+    get:
+      parameters:
+        - in: path
+          name: username
+          required: true
+          type: string
+      operationId: api.get_user_data
+      summary: Return user data.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+
+  /users/delete/{username}:
+    get:
+      parameters:
+        - in: path
+          name: username
+          required: true
+          type: string
+      operationId: api.delete_user
+      summary: Delete user data.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+
+  /users/add/{username}:
+    get:
+      parameters:
+        - in: path
+          name: username
+          required: true
+          type: string
+      operationId: api.add_user
+      summary: Add new user to database. Pull info from platform
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+
+definitions:
+  Streamer:
+    properties:
+      username:
+        type: string
+      platform:
+        type: string
+      url:
+        type: string
+      pic_url:
+        type: string
+    required:
+      - username
