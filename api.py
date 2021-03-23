@@ -27,7 +27,6 @@ def get_user_data(username):
 
 
 def add_user(username):
-    # partner.test_request()
     user = partner.get_streamer_data(username)
 
     streamer = Streamer(platform=user['platform'],

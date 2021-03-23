@@ -4,7 +4,7 @@ from key_file import *
 
 
 def get_token():
-    response = post('https://id.twitch.tv/oauth2/token?client_id=kkzwxbs5w3gchcu3rx4yhkdgce648t&client_secret=4hexl2k2bdl7r1s0e992ipscdhol62&grant_type=client_credentials&scope=user:edit')
+    response = post(f'https://id.twitch.tv/oauth2/token?client_id={client_id}&client_secret={secret}&grant_type=client_credentials&scope=user:edit')
     result = json.loads(response.text)
     return result['access_token']
 
